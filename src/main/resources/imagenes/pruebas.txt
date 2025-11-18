@@ -1,0 +1,41 @@
+PRUEBAS DE API - COMBINADOS
+
+1) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado ",
+  "descripcion": "Descripcion 1",
+  "precio": 10.5,
+  "disponible": true,
+  "categoria": "Mariscos"
+}
+
+(Realizar 10 POST modificando el número)
+
+GET TODOS
+GET http://localhost:8080/api/combinados
+
+GET POR ID
+GET http://localhost:8080/api/combinados/1
+
+PUT (ACTUALIZAR)
+PUT http://localhost:8080/api/combinados/1
+Body:
+{
+  "nombre": "Combinado Marino",
+  "descripcion": "Nuevo valor",
+  "precio": 99.99,
+  "disponible": false,
+  "categoria": "Actualizado"
+}
+
+DELETE
+DELETE http://localhost:8080/api/combinados/1
+
+GET DISPONIBLES
+GET http://localhost:8080/api/combinados/disponibles
+
+GET TODOS DESPUES DEL DELETE
+GET http://localhost:8080/api/combinados
+
+

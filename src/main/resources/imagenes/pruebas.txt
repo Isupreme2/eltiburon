@@ -1,41 +1,129 @@
 PRUEBAS DE API - COMBINADOS
 
+## 1. CREACIÓN DE REGISTROS (POST x 10)
+
 1) POST http://localhost:8080/api/combinados
 Body:
 {
-  "nombre": "Combinado ",
-  "descripcion": "Descripcion 1",
-  "precio": 10.5,
+  "nombre": "Combinado Incaico",
+  "descripcion": "Un festín de clásicos: Ceviche de pescado fresco, Arroz con Pato y una porción de Causa Limeña.",
+  "precio": 18.50,
   "disponible": true,
-  "categoria": "Mariscos"
+  "categoria": "Combinados"
 }
 
-(Realizar 10 POST modificando el número)
+2) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Criollo",
+  "descripcion": "La mezcla perfecta: Lomo Saltado jugoso, acompañado de Anticuchos de corazón y Picarones de postre.",
+  "precio": 16.90,
+  "disponible": true,
+  "categoria": "Combinados"
+}
 
-GET TODOS
-GET http://localhost:8080/api/combinados
-
-GET POR ID
-GET http://localhost:8080/api/combinados/1
-
-PUT (ACTUALIZAR)
-PUT http://localhost:8080/api/combinados/1
+3) POST http://localhost:8080/api/combinados
 Body:
 {
   "nombre": "Combinado Marino",
-  "descripcion": "Nuevo valor",
-  "precio": 99.99,
-  "disponible": false,
-  "categoria": "Actualizado"
+  "descripcion": "Viaje de sabor a la costa: Chicharrón de Calamar, Tacu Tacu de frejoles con mariscos y un toque de Leche de Tigre.",
+  "precio": 20.00,
+  "disponible": true,
+  "categoria": "Combinados"
 }
 
-DELETE
-DELETE http://localhost:8080/api/combinados/1
+4) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Andino",
+  "descripcion": "Para los valientes: Tres tipos de Papa a la Huancaína (clásica, rocoto, aceituna) con Olluquito y Queso Frito.",
+  "precio": 14.80,
+  "disponible": true,
+  "categoria": "Combinados"
+}
 
-GET DISPONIBLES
-GET http://localhost:8080/api/combinados/disponibles
+5) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Gota a Gota",
+  "descripcion": "El sabor de la capital: Ají de Gallina cremoso, Seco de Res con yucas y una refrescante Chicha Morada.",
+  "precio": 17.50,
+  "disponible": true,
+  "categoria": "Combinados"
+}
 
-GET TODOS DESPUES DEL DELETE
+6) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Norteño",
+  "descripcion": "Lo mejor del norte: Cabrito a la Norteña, Tamalito Verde y una generosa porción de Arroz con Mariscos.",
+  "precio": 19.90,
+  "disponible": true,
+  "categoria": "Combinados"
+}
+
+7) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Vegano",
+  "descripcion": "Opción sin carne: Rocoto Relleno vegetariano, Quinua Atamalada y ensalada de palta con choclo.",
+  "precio": 13.50,
+  "disponible": true,
+  "categoria": "Combinados"
+}
+
+8) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "El Misterio Amazónico",
+  "descripcion": "Sabores exóticos: Juane de pollo, Inchincapi y un vaso de exótico Refresco de Camu Camu.",
+  "precio": 15.20,
+  "disponible": true,
+  "categoria": "Combinados"
+}
+
+9) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Doña Pepa",
+  "descripcion": "Postres combinados: Un trío dulce de Suspiro a la Limeña, Mazamorra Morada y Turrón de Doña Pepa.",
+  "precio": 11.90,
+  "disponible": true,
+  "categoria": "Combinados"
+}
+
+10) POST http://localhost:8080/api/combinados
+Body:
+{
+  "nombre": "Combinado Power",
+  "descripcion": "El más contundente: Tallarines Verdes con bistec apanado, Ceviche Clásico y Papa Rellena casera.",
+  "precio": 22.50,
+  "disponible": true,
+  "categoria": "Combinados"
+}
+
+GET TODOS (Verificar los 10 creados)
 GET http://localhost:8080/api/combinados
 
+GET POR ID (Verificar un registro específico)
+GET http://localhost:8080/api/combinados/5
 
+PUT (ACTUALIZAR - Modificar el Combinado 1)
+PUT http://localhost:8080/api/combinados/1
+Body:
+{
+  "nombre": "Combinado Marino PREMIUM",
+  "descripcion": "Arroz con mariscos + Papa a la huancaína + Ceviche Clásico + Tallarin a la Huancaína",
+  "precio": 25.00,
+  "disponible": true,
+  "categoria": "Combinados"
+}
+
+GET DISPONIBLES (Deberían seguir siendo 10 si todos se crearon con disponible: true)
+GET http://localhost:8080/api/combinados/disponibles
+
+DELETE (Eliminar el Combinado 1, que acabamos de actualizar)
+DELETE http://localhost:8080/api/combinados/1
+
+GET TODOS DESPUES DEL DELETE (Deberían quedar 9 registros)
+GET http://localhost:8080/api/combinados
